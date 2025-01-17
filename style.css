@@ -2,45 +2,45 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Black background */
-    color: #0f0; /* Green text */
-    line-height: 1.6; /* Improve text readability */
+    background-color: #000;
+    color: #0f0;
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #0f0; /* Green headings */
+    color: #0f0;
     font-weight: bold;
 }
 
 a {
-    color: #0f0; /* Green links */
+    color: #0f0;
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0a0; /* Darker green on hover */
+    color: #0a0;
     text-decoration: underline;
 }
 
 header {
-    background-color: #111; /* Slightly lighter black for header background */
+    background-color: #111;
     padding: 1em 0;
-    text-align: center; /* Center header content */
+    text-align: center;
 }
 
 nav {
     display: flex;
-    justify-content: center; /* Center navigation links */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 1em; /* Space between nav items */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
     padding: 1em;
 }
 
 nav a {
     display: inline-block;
     padding: 0.5em 1em;
-    border: 1px solid #0f0; /* Green border */
+    border: 1px solid #0f0;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
@@ -53,7 +53,7 @@ nav a:hover {
 
 main {
     padding: 2em;
-    min-height: calc(100vh - 150px); /* Ensure main takes up available height */
+    min-height: calc(100vh - 150px);
 }
 
 #hero {
@@ -83,16 +83,29 @@ main {
     margin-bottom: 2em;
 }
 
-.lawyer-container img {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Add transition for hover effect */
+.lawyer { /* Styles for each individual lawyer */
+    text-align: center;
+    margin: 10px; /* Reduced margin */
+    width: 200px; /* Fixed width */
+    color: #eee; /* Added text color for descriptions */
 }
 
-.lawyer-container img:hover {
-    transform: scale(1.1); /* Scale up image on hover */
+.lawyer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #0f0; /* Green border */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.lawyer img:hover {
+    transform: scale(1.1);
+}
+
+.lawyer p{ /* Style for description */
+    color: #0f0;
 }
 
 #articles {
@@ -110,8 +123,8 @@ main {
 }
 
 .article:hover {
-    transform: translateY(-5px); /* Move article up slightly on hover */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Add a more pronounced shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .article h3 {
@@ -138,7 +151,5 @@ footer {
     background-color: #111;
     text-align: center;
     padding: 1em 0;
-    position: relative; /* Remove fixed positioning */
-    bottom: 0;
     width: 100%;
 }

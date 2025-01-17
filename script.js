@@ -1,45 +1,51 @@
-// Attorneys
+// script.js
+
+function createLawyerElement(lawyer) {
+  const lawyerElement = document.createElement('div');
+  lawyerElement.classList.add('lawyer');
+
+  const lawyerImage = document.createElement('img');
+  lawyerImage.src = lawyer.image;
+  lawyerImage.alt = lawyer.name;
+  lawyerElement.appendChild(lawyerImage);
+
+  const lawyerDescription = document.createElement('p');
+  lawyerDescription.textContent = `Simbiat Lola'
+  lawyerElement.appendChild(lawyerDescription);
+
+  return lawyerElement;
+}
+
+function displayLawyers(lawyers, containerId) {
+  const lawyerContainer = document.getElementById(containerId);
+
+  if (!lawyerContainer) {
+    console.error("Container with ID '" + containerId + "' not found.");
+    return;
+  }
+
+  lawyerContainer.innerHTML = ""; // Clear existing content in the container
+
+  lawyers.forEach(lawyer => {
+    const lawyerElement = createLawyerElement(lawyer);
+    lawyerContainer.appendChild(lawyerElement);
+  });
+}
+
 const maleLawyers = [
-    { name: "David Lee", image: "images/male1.jpg" },
-    { name: "Akintunde Adams", image: "images/male2.jpg" },
-    { name: "James Smiths", image: "images/male3.jpg" },
-    // ... more male lawyers
+  { name: "David Lee", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/Akins%20image.jpg" },
+  { name: "Akintunde Adams", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/David%20image.jpg" },
+  { name: "James Smiths", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/James%20Image.jpg" },
+  // ... more male lawyers
 ];
 
 const femaleLawyers = [
-    { name: "Simbiat Lola", image: "images/female1.jpg" },
-    { name: "Adetayo Stella Marris", image: "images/female2.jpg" },
-    { name: "Zainab Shittu", image: "images/female3.jpg" },
-    { name: Ogunleye Oluwaatomi", image: "images/female3.jpg" },
-    // ... more female lawyers
+  { name: "Simbiat Lola", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/Simbiat%20Picture.jpg" },
+  { name: "Adetayo Stella Marris", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/Adetayo%20pivture.jpg" },
+  { name: "Zainab Shittu", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/Zainab%20pivtue.jpg" },
+  { name: Ogunleye Oluwaatomi", image: "https://raw.githubusercontent.com/birdieee/image-hosting/main/Tomi%20poicture.jpg" },
+  // ... more female lawyers
 ];
-
-function displayLawyers(lawyers, containerId) {
-    const container = document.getElementById(containerId);
-
-    if (!container) {
-        console.error("Container with ID '" + containerId + "' not found.");
-        return; // Exit the function if the container isn't found
-    }
-
-    container.innerHTML = ""; // Clear existing content in the container
-
-    lawyers.forEach(lawyer => {
-        const lawyerDiv = document.createElement("div"); // Create a div for each lawyer
-        lawyerDiv.classList.add("lawyer"); // Add a class for styling
-
-        const img = document.createElement("img");
-        img.src = lawyer.image;
-        img.alt = lawyer.name;
-        lawyerDiv.appendChild(img); // Append the image to the lawyer's div
-
-        const name = document.createElement("p");
-        name.textContent = lawyer.name;
-        lawyerDiv.appendChild(name); // Append the name to the lawyer's div
-
-        container.appendChild(lawyerDiv); // Append the lawyer's div to the container
-    });
-}
 
 displayLawyers(maleLawyers, "male-lawyers");
 displayLawyers(femaleLawyers, "female-lawyers");
