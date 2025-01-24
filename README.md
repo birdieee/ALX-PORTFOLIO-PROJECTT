@@ -29,6 +29,8 @@ The website can be viewed in any modern web browser by opening the `index.html` 
 ![Homepage Screenshot](screenshots/homepage.png)
 ![Practice Areas Screenshot](screenshots/practice_areas.png)
 
+## Website Link
+The website can be accessed through https://birdieee.github.io/ALX-PORTFOLIO-PROJECTT/
 
 ## Author
 
